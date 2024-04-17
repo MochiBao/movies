@@ -6,9 +6,9 @@ const MoviesItem = ({id, title, video, poster_path, overview}) => {
         <p>{title}</p>
         <p>{overview}</p>
         <img src={`https://image.tmdb.org/t/p/w400${poster_path}`}/>
-        <video src={video}></video>
+        {video && <video src={video} controls></video>}
     </li>
   )
-}
+};
 
 export default MoviesItem

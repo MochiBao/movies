@@ -1,18 +1,22 @@
 import axios from "axios";
-import MoviesList from "./components/movies/moviesList/MoviesList";
-import fetchTrendingFilms from "./API/FilmsApi";
-import { useEffect, useState } from "react";
+import {Routes, Route, useParams} from 'react-router-dom';
+import Search from "./pages/Search";
+import PopularFilms from "./pages/PopularFilms";
+import NotFound from "./pages/NotFound";
+import Header from "./components/Header/Header";
+
+
 
 function App() {
-  const [data, setData] = useState([])
-  useEffect(() => {
-   fetchTrendingFilms().then(setData);
-  }, []);
-  
-console.log(data);
-  
   return (
-    <MoviesList data={data}/>
+    <>
+    <Header />
+    <Routes>
+      <Route path="/search" element={ <Search />} />
+      <Route path="/" element={ <PopularFilms />}/>
+      <Route path="*" element={ <NotFound/>}/>
+    </Routes>
+    </>
   );
 }
 
