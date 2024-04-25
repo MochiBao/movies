@@ -26,7 +26,7 @@ const Search = () => {
       <>
       <FormSearch getKeyWord={getKeyWord}/>
       <MoviesList data={data}/>
-      <Search />
+      {/* <Search /> */}
       </>
     );
 }
