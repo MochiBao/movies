@@ -8,7 +8,7 @@ const PopularFilms = () => {
   const location = useLocation()
   useEffect(() => {
     fetchPopularFims().then(setMovies);
-  })
+  }, [])
   return (
     <>
     <ul>
